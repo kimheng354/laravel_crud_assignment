@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SS30 | @yield('title')</title>
+    <title>| @yield('title')</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -19,12 +19,14 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
+    <link rel="icon" type="image/png" href="{{ asset('icon/icon.png') }}">
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
     <script>
         function confirmDelete() {
             return confirm('Are you sure you want to delete this item?');
         }
     </script>
+    
 </head>
 
 <body id="page-top">
