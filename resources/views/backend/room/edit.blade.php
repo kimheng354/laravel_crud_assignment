@@ -7,17 +7,10 @@
 
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">UpdateRoom</h1>
-        @if (Session::has('success'))
-            <div class="alert alert-success" role="alert">
-                {{ session('success') }}
-            </div>
-        @endif
-
-        @if (Session::has('error'))
-            <div class="alert alert-danger" role="alert">
-                {{ session('error') }}
-            </div>
-        @endif
+        @component('components.alert')
+            
+        @endcomponent
+        
         <form action="{{url('room/update')}}" method="POST" autocomplete="off" enctype="multipart/form-data" >
             <input type="hidden" name="room_id" id="" value="{{$room->room_id}}">
             @csrf

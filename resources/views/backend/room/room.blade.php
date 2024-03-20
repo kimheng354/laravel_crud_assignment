@@ -20,11 +20,9 @@
             </form>
         </div>
         {{-- END_Search --}}
-        @if (Session::has('success'))
-            <div class="alert alert-success" role="alert">
-                {{ session('success') }}
-            </div>
-        @endif
+        @component('components.alert')
+            
+        @endcomponent
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">

@@ -7,17 +7,9 @@
 
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">CreateRoom</h1>
-        @if (Session::has('success'))
-            <div class="alert alert-success" role="alert">
-                {{ session('success') }}
-            </div>
-        @endif
-
-        {{-- @if (Session::has('error'))
-            <div class="alert alert-danger" role="alert">
-                {{ session('error') }}
-            </div>
-        @endif --}}
+        @component('components.alert')
+            
+        @endcomponent
         <form action="{{ url('room/save') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
             @csrf
             <div class="row">

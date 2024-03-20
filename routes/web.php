@@ -26,4 +26,7 @@ Route::controller(RoomController::class)->group(function(){
 Route::controller(UserController::class) ->group(function(){
     Route::get('login','index')->name('login');
     Route::post('login/Dologin','dologin')->name('login.dologin');
+    Route::get('logout','logout')->name('logout');
+    Route::get('register','register')->name('register');
+    Route::post('user/save','save');
 });

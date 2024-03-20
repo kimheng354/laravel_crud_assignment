@@ -10,7 +10,11 @@ class RoomController extends Controller
 {   
    
     public function index()
-        {
+        {   
+            //this condition to check if user not login but they know about url can't login 
+            if (session('user') == null) {
+                 return redirect('login');
+            }
             $perPage = 3;
             $roomlist = DB::table('rooms')
                 ->join('room_types', 'rooms.room_type_id', '=', 'room_types.room_type_id')
@@ -40,6 +44,9 @@ class RoomController extends Controller
         
 
     public function create(){
+        if (session('user') == null) {
+            return redirect('login');
+       }
         // dd($room_name['roomname']);#to test before map data
         $room_type = DB::table('room_types')
         //->select('room_types.*');
